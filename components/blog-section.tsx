@@ -1,49 +1,62 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight, Calendar, MessageCircle } from "lucide-react"
+
+// Wavy underline SVG component
+const WavyUnderline = () => (
+  <svg viewBox="0 0 100 15" className="h-4 w-20 text-primary">
+    <path
+      d="M0 7.5 Q 12.5 0, 25 7.5 T 50 7.5 T 75 7.5 T 100 7.5"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    />
+  </svg>
+)
 
 const posts = [
   {
-    title: "How to get the most out of gym membership",
+    title: "How To Get The Most Out Of Gym Membership",
     excerpt: "The purpose of lorem ipsum is to create a natural looking block",
     date: "July 28, 2025",
     comments: "No comments",
-    image: "/images/blog-1.jpg",
+    image: "/images/blog-gym.jpg",
   },
   {
-    title: "Happy moments when you achieve your aim",
+    title: "Happy Moments When You Achieve Your Aim",
     excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
     date: "July 21, 2025",
     comments: "No comments",
-    image: "/images/blog-2.jpg",
+    image: "/images/blog-achieve.jpg",
   },
   {
-    title: "Think outside the box - change the game",
+    title: "Think Outside The Box - Change The Game",
     excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
     date: "July 21, 2025",
     comments: "No comments",
-    image: "/images/blog-3.jpg",
+    image: "/images/blog-think.jpg",
   },
 ]
 
 export default function BlogSection() {
   return (
-    <section id="blog" className="relative overflow-hidden bg-background py-20 lg:py-28">
+    <section id="blog" className="relative overflow-hidden bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         {/* Section header */}
-        <div className="mb-14 text-center">
+        <div className="mb-12 text-center">
           <div className="mb-4 flex items-center justify-center gap-3">
-            <span className="h-px w-10 bg-primary" />
+            <span className="h-px w-6 bg-primary" />
             <span className="text-sm font-semibold uppercase tracking-widest text-primary">
               Our Latest Articles
             </span>
-            <span className="h-px w-10 bg-primary" />
+            <span className="h-px w-6 bg-primary" />
           </div>
-          <h2 className="font-sans text-3xl font-bold uppercase leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance">
-            Achieve Your Goals. Unlock Your <span className="text-primary">Full Potential.</span>
+          <h2 className="mx-auto max-w-2xl font-sans text-3xl font-bold italic leading-tight text-[#1a1a1a] sm:text-4xl lg:text-[2.75rem]">
+            Achieve Your Goals. Unlock Your Full Potential.
           </h2>
+          <div className="mt-3 flex justify-center">
+            <WavyUnderline />
+          </div>
         </div>
 
         {/* Blog grid */}
@@ -51,7 +64,7 @@ export default function BlogSection() {
           {posts.map((post) => (
             <article
               key={post.title}
-              className="group overflow-hidden rounded-2xl border border-border/50 bg-secondary transition-all hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5"
+              className="group overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-lg"
             >
               {/* Image */}
               <div className="relative aspect-[16/10] overflow-hidden">
@@ -61,41 +74,29 @@ export default function BlogSection() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
               </div>
 
               {/* Content */}
               <div className="p-6">
-                {/* Meta */}
-                <div className="mb-3 flex items-center gap-4 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar className="h-3.5 w-3.5 text-primary" />
-                    {post.date}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <MessageCircle className="h-3.5 w-3.5 text-primary" />
-                    {post.comments}
-                  </span>
-                </div>
-
                 {/* Title */}
-                <h3 className="font-sans text-lg font-bold uppercase leading-tight text-foreground transition-colors group-hover:text-primary">
+                <h3 className="text-center font-sans text-lg font-bold leading-tight text-[#1a1a1a] transition-colors group-hover:text-primary">
                   {post.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-3 text-center text-sm leading-relaxed text-gray-600">
                   {post.excerpt}
                 </p>
 
-                {/* Read more */}
-                <Link
-                  href="#"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-primary transition-all hover:gap-3"
-                >
-                  Read More
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+                {/* Meta - divider */}
+                <div className="my-4 h-px bg-gray-200" />
+
+                {/* Meta */}
+                <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
+                  <span>{post.date}</span>
+                  <span>|</span>
+                  <span>{post.comments}</span>
+                </div>
               </div>
             </article>
           ))}

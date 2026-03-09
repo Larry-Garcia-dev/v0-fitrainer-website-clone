@@ -2,101 +2,110 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Target, Clock, Dumbbell } from "lucide-react"
+import { Phone, Settings } from "lucide-react"
 
-const features = [
-  {
-    icon: Target,
-    title: "Achieve your goals",
-    description: "Nam laoreet ultricies vestibulum. Cras a odio tempo.",
-  },
-  {
-    icon: Clock,
-    title: "Train Day and night",
-    description: "Nam laoreet ultricies vestibulum. Cras a odio tempo.",
-  },
-  {
-    icon: Dumbbell,
-    title: "Best gym equipment",
-    description: "Nam laoreet ultricies vestibulum. Cras a odio tempo.",
-  },
-]
+// Wavy underline SVG component
+const WavyUnderline = () => (
+  <svg viewBox="0 0 100 15" className="h-4 w-20 text-primary">
+    <path
+      d="M0 7.5 Q 12.5 0, 25 7.5 T 50 7.5 T 75 7.5 T 100 7.5"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    />
+  </svg>
+)
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative overflow-hidden bg-background py-20 lg:py-28">
+    <section id="about" className="relative overflow-hidden bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-20 items-center">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Content side */}
+          <div className="order-2 lg:order-1">
+            {/* Section label */}
+            <div className="mb-4 flex items-center gap-3">
+              <span className="text-sm font-semibold uppercase tracking-widest text-primary">
+                More About Us
+              </span>
+              <span className="h-px w-10 bg-primary" />
+            </div>
+
+            {/* Main Heading */}
+            <h2 className="font-sans text-3xl font-bold leading-tight text-[#1a1a1a] sm:text-4xl lg:text-[2.75rem]">
+              Make Yourself Stronger Then Your Best Excuses
+            </h2>
+
+            {/* Wavy underline */}
+            <div className="mt-3">
+              <WavyUnderline />
+            </div>
+
+            {/* Description */}
+            <p className="mt-6 text-base leading-relaxed text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+            {/* Quote */}
+            <p className="mt-6 font-serif text-base italic text-[#1a1a1a]">
+              &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;
+            </p>
+
+            {/* Phone + CTA */}
+            <div className="mt-8 flex flex-wrap items-center gap-6">
+              <div className="flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center text-primary">
+                  <Phone className="h-6 w-6" />
+                </div>
+                <div>
+                  <p className="text-sm text-primary">Need Help</p>
+                  <p className="font-sans text-lg font-bold text-[#1a1a1a]">(+258) 2569 2582</p>
+                </div>
+              </div>
+
+              <Link
+                href="#services"
+                className="rounded-full bg-primary px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-white transition-all hover:bg-primary/90"
+              >
+                Learn More About Us
+              </Link>
+            </div>
+          </div>
+
           {/* Image side */}
-          <div className="relative">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+          <div className="relative order-1 lg:order-2">
+            {/* Main Image */}
+            <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
               <Image
-                src="/images/about-trainer.jpg"
-                alt="Boxing workout"
+                src="/images/about-1.jpg"
+                alt="Trainer with weight plate"
                 fill
                 className="object-cover"
               />
             </div>
+
+            {/* Secondary Image - overlapping */}
+            <div className="absolute -right-4 top-1/4 hidden aspect-[3/4] w-1/2 overflow-hidden rounded-xl border-4 border-white shadow-xl lg:block">
+              <Image
+                src="/images/about-2.jpg"
+                alt="Trainer using cable machine"
+                fill
+                className="object-cover"
+              />
+            </div>
+
             {/* Experience badge */}
-            <div className="absolute -bottom-6 -right-4 rounded-xl bg-primary px-8 py-6 shadow-2xl shadow-primary/30 sm:right-6">
-              <span className="block font-sans text-4xl font-bold text-primary-foreground">25+</span>
-              <span className="mt-1 block text-sm font-medium uppercase tracking-wider text-primary-foreground/80">
-                Years Experiences
-              </span>
+            <div className="absolute -bottom-6 right-4 flex items-center gap-3 rounded-xl bg-primary px-6 py-4 shadow-xl lg:right-auto lg:left-1/2">
+              <div className="flex h-12 w-12 items-center justify-center text-white">
+                <Settings className="h-8 w-8" />
+              </div>
+              <div>
+                <span className="block font-sans text-3xl font-bold text-white">15 +</span>
+                <span className="block text-xs font-medium uppercase tracking-wider text-white/90">
+                  Years Experiences
+                </span>
+              </div>
             </div>
-            {/* Quote card */}
-            <div className="absolute -left-4 top-8 max-w-xs rounded-xl bg-secondary/90 p-5 shadow-xl backdrop-blur-sm sm:left-0 lg:-left-6">
-              <p className="text-sm italic leading-relaxed text-muted-foreground">
-                &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;
-              </p>
-            </div>
-          </div>
-
-          {/* Content side */}
-          <div>
-            {/* Section label */}
-            <div className="mb-4 flex items-center gap-3">
-              <span className="h-px w-10 bg-primary" />
-              <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-                Need Help
-              </span>
-            </div>
-
-            {/* Phone number */}
-            <p className="mb-6 font-sans text-2xl font-bold text-foreground">
-              (+258) 2569 2582
-            </p>
-
-            {/* Features list */}
-            <div className="flex flex-col gap-6">
-              {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="group flex gap-5 rounded-xl border border-border/50 bg-secondary/50 p-5 transition-all hover:border-primary/30 hover:bg-secondary"
-                >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all group-hover:bg-primary group-hover:text-primary-foreground">
-                    <feature.icon className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-sans text-lg font-semibold uppercase tracking-wide text-foreground">
-                      {feature.title}
-                    </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA */}
-            <Link
-              href="#services"
-              className="group mt-8 inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90"
-            >
-              Learn More About Us
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
           </div>
         </div>
       </div>

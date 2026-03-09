@@ -1,131 +1,138 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Star, ChevronLeft, ChevronRight, Quote } from "lucide-react"
+
+// Wavy underline SVG component
+const WavyUnderline = () => (
+  <svg viewBox="0 0 100 15" className="h-4 w-20 text-white/30">
+    <path
+      d="M0 7.5 Q 12.5 0, 25 7.5 T 50 7.5 T 75 7.5 T 100 7.5"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    />
+  </svg>
+)
+
+// Quote icon
+const QuoteIcon = ({ className = "" }: { className?: string }) => (
+  <div className={`flex h-14 w-14 items-center justify-center rounded-full ${className}`}>
+    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+      <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
+    </svg>
+  </div>
+)
 
 const testimonials = [
   {
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.",
     name: "Harry Houdson",
     role: "Trainer",
-    image: "/images/testimonial-1.jpg",
+    image: "/images/testimonial-avatar-1.jpg",
+    featured: false,
   },
   {
-    text: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.",
     name: "Harry Houdson",
     role: "Trainer",
-    image: "/images/testimonial-1.jpg",
-  },
-  {
-    text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    name: "Harry Houdson",
-    role: "Trainer",
-    image: "/images/testimonial-1.jpg",
+    image: "/images/testimonial-avatar-2.jpg",
+    featured: true,
   },
 ]
 
 export default function TestimonialsSection() {
-  const [current, setCurrent] = useState(0)
-
-  const prev = () => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))
-  const next = () => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))
-
   return (
-    <section className="relative overflow-hidden bg-background py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-20 items-center">
+    <section className="relative overflow-hidden py-20 lg:py-28">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/testimonial-bg.jpg"
+          alt="Gym background"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/70" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left content */}
           <div>
             <div className="mb-4 flex items-center gap-3">
-              <span className="h-px w-10 bg-primary" />
-              <span className="text-sm font-semibold uppercase tracking-widest text-primary">
+              <span className="text-sm font-semibold uppercase tracking-widest text-white">
                 Testimonials
               </span>
+              <span className="h-px w-10 bg-white/50" />
             </div>
-            <h2 className="font-sans text-3xl font-bold uppercase leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance">
-              {"What's Clients Say About"} <span className="text-primary">Bodyboost</span>
+            <h2 className="font-sans text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.75rem]">
+              {"What's Clients Say About Bodyboost"}
             </h2>
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">
+            <div className="mt-3">
+              <WavyUnderline />
+            </div>
+            <p className="mt-6 text-base leading-relaxed text-white/70">
               Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-sm leading-relaxed text-white/60">
               Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <Link
               href="#contact"
-              className="group mt-8 inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90"
+              className="mt-8 inline-block rounded-full bg-primary px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-white transition-all hover:bg-primary/90"
             >
               Learn More
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
-          {/* Right - testimonial carousel */}
-          <div className="relative">
-            <div className="overflow-hidden rounded-2xl border border-border/50 bg-secondary p-8 lg:p-10">
-              <Quote className="mb-4 h-10 w-10 text-primary/30" />
-
-              {/* Stars */}
-              <div className="mb-4 flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                ))}
-              </div>
-
-              {/* Text */}
-              <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
-                {testimonials[current].text}
+          {/* Right - testimonial cards */}
+          <div className="relative flex flex-col gap-6 md:flex-row md:items-start">
+            {/* First card - outlined */}
+            <div className="relative rounded-xl border-2 border-dashed border-white/30 bg-transparent p-6 md:mt-12">
+              <QuoteIcon className="bg-gray-500 text-white" />
+              <p className="mt-4 text-sm leading-relaxed text-white/80">
+                {testimonials[0].text}
               </p>
-
-              {/* Author */}
-              <div className="mt-8 flex items-center gap-4">
-                <div className="relative h-14 w-14 overflow-hidden rounded-full">
+              <div className="mt-6 flex items-center gap-3">
+                <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-white/20">
                   <Image
-                    src={testimonials[current].image}
-                    alt={testimonials[current].name}
+                    src={testimonials[0].image}
+                    alt={testimonials[0].name}
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div>
-                  <h4 className="font-sans text-lg font-bold uppercase text-foreground">
-                    {testimonials[current].name}
+                  <h4 className="font-sans text-base font-bold text-primary">
+                    {testimonials[0].name}
                   </h4>
-                  <p className="text-sm text-primary">{testimonials[current].role}</p>
+                  <p className="text-xs text-white/60">{testimonials[0].role}</p>
                 </div>
               </div>
             </div>
 
-            {/* Navigation */}
-            <div className="mt-6 flex items-center gap-4">
-              <button
-                onClick={prev}
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-border transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <div className="flex gap-2">
-                {testimonials.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrent(i)}
-                    className={`h-2.5 rounded-full transition-all ${
-                      i === current ? "w-8 bg-primary" : "w-2.5 bg-muted-foreground/30"
-                    }`}
-                    aria-label={`Go to testimonial ${i + 1}`}
+            {/* Second card - filled red */}
+            <div className="relative rounded-xl bg-primary p-6 md:-mt-6">
+              <QuoteIcon className="bg-white text-primary" />
+              <p className="mt-4 text-sm leading-relaxed text-white/90">
+                {testimonials[1].text}
+              </p>
+              <div className="mt-6 flex items-center gap-3">
+                <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-white/30">
+                  <Image
+                    src={testimonials[1].image}
+                    alt={testimonials[1].name}
+                    fill
+                    className="object-cover"
                   />
-                ))}
+                </div>
+                <div>
+                  <h4 className="font-sans text-base font-bold text-white">
+                    {testimonials[1].name}
+                  </h4>
+                  <p className="text-xs text-white/70">{testimonials[1].role}</p>
+                </div>
               </div>
-              <button
-                onClick={next}
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-border transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
-                aria-label="Next testimonial"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </button>
             </div>
           </div>
         </div>

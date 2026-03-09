@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Phone } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import Link from "next/link"
 
 const navLinks = [
@@ -11,8 +11,25 @@ const navLinks = [
   { label: "Team", href: "#team" },
   { label: "Pricing", href: "#pricing" },
   { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
 ]
+
+// Fitrainer Logo
+const FitrainerLogo = () => (
+  <div className="flex items-center gap-2">
+    <div className="flex h-8 w-8 items-center justify-center">
+      <svg viewBox="0 0 40 40" className="h-8 w-8 text-white">
+        <path
+          d="M20 5 L30 10 L30 20 L25 25 L30 30 L20 35 L10 30 L15 25 L10 20 L10 10 Z"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <path d="M15 15 L25 15 L25 20 L20 25 L15 20 Z" fill="currentColor" />
+      </svg>
+    </div>
+    <span className="font-sans text-xl font-bold text-white">Fitrainer</span>
+  </div>
+)
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -28,23 +45,19 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg shadow-black/20"
+          ? "bg-[#1a1a1a]/95 shadow-lg backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
+      {/* Red top bar */}
+      <div className="h-1 w-full bg-primary" />
+
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         {/* Logo */}
-        <Link href="#home" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-            <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-primary-foreground" stroke="currentColor" strokeWidth="2.5">
-              <path d="M6.5 6.5h11M4 10h16M6.5 17.5h11M2 14h3M19 14h3M9 6.5V17.5M15 6.5V17.5" strokeLinecap="round" />
-            </svg>
-          </div>
-          <span className="font-sans text-xl font-bold uppercase tracking-wider text-foreground">
-            Fitrainer
-          </span>
+        <Link href="#home">
+          <FitrainerLogo />
         </Link>
 
         {/* Desktop Navigation */}
@@ -53,9 +66,10 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm font-medium uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary"
+              className="flex items-center gap-1 text-sm font-medium text-white/80 transition-colors hover:text-white"
             >
               {link.label}
+              <ChevronDown className="h-3 w-3" />
             </Link>
           ))}
         </nav>
@@ -64,14 +78,13 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             href="#contact"
-            className="hidden items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 lg:flex"
+            className="hidden rounded-full bg-primary px-6 py-2.5 text-sm font-semibold uppercase tracking-wider text-white transition-all hover:bg-primary/90 lg:block"
           >
-            <Phone className="h-4 w-4" />
             Contact Us
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex h-10 w-10 items-center justify-center text-foreground lg:hidden"
+            className="flex h-10 w-10 items-center justify-center text-white lg:hidden"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -81,14 +94,14 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {mobileOpen && (
-        <div className="border-t border-border bg-background/98 backdrop-blur-md lg:hidden">
+        <div className="border-t border-white/10 bg-[#1a1a1a]/98 backdrop-blur-md lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="rounded-md px-4 py-3 text-sm font-medium uppercase tracking-wider text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                className="rounded-md px-4 py-3 text-sm font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white"
               >
                 {link.label}
               </Link>
@@ -96,9 +109,8 @@ export default function Navbar() {
             <Link
               href="#contact"
               onClick={() => setMobileOpen(false)}
-              className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold uppercase tracking-wider text-primary-foreground"
+              className="mt-2 flex items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold uppercase tracking-wider text-white"
             >
-              <Phone className="h-4 w-4" />
               Contact Us
             </Link>
           </nav>

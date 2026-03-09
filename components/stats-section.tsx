@@ -2,97 +2,116 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Dumbbell, HeartPulse } from "lucide-react"
+import { Dumbbell, HeartPulse } from "lucide-react"
+
+// Wavy underline SVG component
+const WavyUnderline = () => (
+  <svg viewBox="0 0 100 15" className="h-4 w-20 text-primary">
+    <path
+      d="M0 7.5 Q 12.5 0, 25 7.5 T 50 7.5 T 75 7.5 T 100 7.5"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    />
+  </svg>
+)
 
 export default function StatsSection() {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/stats-bg.jpg"
-          alt="Gym background"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-background/90" />
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
-        {/* Top stats bar */}
-        <div className="mb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { value: "98%", label: "Client Satisfaction" },
-            { value: "50+", label: "Expert Trainers" },
-            { value: "25K", label: "Happy Members" },
-            { value: "99%", label: "Customer Support" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="flex flex-col items-center rounded-xl border border-border/30 bg-secondary/50 p-6 text-center backdrop-blur-sm"
-            >
-              <span className="font-sans text-4xl font-bold text-primary">{stat.value}</span>
-              <span className="mt-2 text-sm uppercase tracking-wider text-muted-foreground">
-                {stat.label}
-              </span>
+    <section className="relative overflow-hidden bg-white py-16 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Left - Image with stats card */}
+          <div className="relative">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+              <Image
+                src="/images/stats-trainer.jpg"
+                alt="Trainer using gym equipment"
+                fill
+                className="object-cover"
+              />
             </div>
-          ))}
-        </div>
 
-        {/* Main content */}
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-20 items-center">
-          {/* Left */}
+            {/* Stats Card Overlay */}
+            <div className="absolute -bottom-6 -right-4 w-72 rounded-xl bg-white p-6 shadow-xl lg:right-6">
+              {/* Client Satisfaction */}
+              <div className="mb-4">
+                <div className="mb-2 flex items-center justify-between">
+                  <span className="text-sm font-semibold uppercase text-gray-700">Client Satisfaction</span>
+                  <span className="rounded-full bg-primary px-2.5 py-1 text-xs font-bold text-white">90%</span>
+                </div>
+                <div className="h-2 w-full overflow-hidden rounded-full bg-gray-200">
+                  <div className="h-full w-[90%] rounded-full bg-primary" />
+                </div>
+              </div>
+
+              {/* Customer Support */}
+              <div>
+                <div className="mb-2 flex items-center justify-between">
+                  <span className="text-sm font-semibold uppercase text-gray-700">Customer Support</span>
+                  <span className="rounded-full bg-primary px-2.5 py-1 text-xs font-bold text-white">85%</span>
+                </div>
+                <div className="h-2 w-full overflow-hidden rounded-full bg-gray-200">
+                  <div className="h-full w-[85%] rounded-full bg-primary" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right - Content */}
           <div>
             <div className="mb-4 flex items-center gap-3">
-              <span className="h-px w-10 bg-primary" />
               <span className="text-sm font-semibold uppercase tracking-widest text-primary">
                 Our Statistics
               </span>
+              <span className="h-px w-10 bg-primary" />
             </div>
-            <h2 className="font-sans text-3xl font-bold uppercase leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance">
-              Achieve Your Goals. Unlock Your <span className="text-primary">Full Potential.</span>
+            <h2 className="font-sans text-3xl font-bold leading-tight text-[#1a1a1a] sm:text-4xl lg:text-[2.5rem]">
+              Achieve Your Goals. Unlock Your Full Potential.
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+            <div className="mt-3">
+              <WavyUnderline />
+            </div>
+            <p className="mt-6 text-base leading-relaxed text-gray-600">
               Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Inceptos per con ulpa qui qui officia deserunt mollit ani sectetur consequatur proin.
             </p>
-          </div>
 
-          {/* Right - feature cards */}
-          <div className="flex flex-col gap-6">
-            <div className="flex gap-5 rounded-xl border border-border/50 bg-secondary/50 p-6 backdrop-blur-sm">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                <Dumbbell className="h-6 w-6" />
+            {/* Feature cards */}
+            <div className="mt-8 flex flex-col gap-6">
+              <div className="flex gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center text-gray-400">
+                  <Dumbbell className="h-8 w-8" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <h3 className="font-sans text-lg font-bold italic text-primary">
+                    Free Fitness Training
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-gray-600">
+                    Nam laoreet ultricies vestibulum. Cras a odio tempo excepteur sint occaecat cupidatat tempo excepteur.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-sans text-lg font-semibold uppercase tracking-wide text-foreground">
-                  Free Fitness Training
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Nam laoreet ultricies vestibulum. Cras a odio tempo excepteur sint occaecat cupidatat tempo excepteur.
-                </p>
-              </div>
-            </div>
 
-            <div className="flex gap-5 rounded-xl border border-border/50 bg-secondary/50 p-6 backdrop-blur-sm">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                <HeartPulse className="h-6 w-6" />
-              </div>
-              <div>
-                <h3 className="font-sans text-lg font-semibold uppercase tracking-wide text-foreground">
-                  Cardio and Strength
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Nam laoreet ultricies vestibulum. Cras a odio tempo excepteur sint occaecat cupidatat tempo excepteur.
-                </p>
+              <div className="flex gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center text-gray-400">
+                  <HeartPulse className="h-8 w-8" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <h3 className="font-sans text-lg font-bold italic text-primary">
+                    Cardio And Strength
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-gray-600">
+                    Nam laoreet ultricies vestibulum. Cras a odio tempo excepteur sint occaecat cupidatat tempo excepteur.
+                  </p>
+                </div>
               </div>
             </div>
 
             <Link
               href="#contact"
-              className="group inline-flex w-fit items-center gap-3 rounded-lg bg-primary px-8 py-4 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90"
+              className="mt-8 inline-block rounded-full bg-primary px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-white transition-all hover:bg-primary/90"
             >
               Learn More
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
