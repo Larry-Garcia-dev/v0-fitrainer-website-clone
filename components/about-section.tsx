@@ -2,11 +2,11 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Phone, Activity } from "lucide-react"
+import { Phone, Award } from "lucide-react"
 
 // Wavy underline SVG component
 const WavyUnderline = () => (
-  <svg viewBox="0 0 100 15" className="h-4 w-20 text-[#00fffd]">
+  <svg viewBox="0 0 100 15" className="h-4 w-20 text-[#00a8a6]">
     <path
       d="M0 7.5 Q 12.5 0, 25 7.5 T 50 7.5 T 75 7.5 T 100 7.5"
       fill="none"
@@ -28,7 +28,7 @@ export default function AboutSection() {
               <span className="text-sm font-semibold uppercase tracking-widest text-[#00a8a6]">
                 Un nuevo enfoque del entrenamiento
               </span>
-              <span className="h-px w-10 bg-[#00fffd]" />
+              <span className="h-px w-10 bg-[#00a8a6]" />
             </div>
 
             {/* Main Heading */}
@@ -54,7 +54,7 @@ export default function AboutSection() {
             {/* Phone + CTA */}
             <div className="mt-8 flex flex-wrap items-center gap-6">
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center text-[#00fffd]">
+                <div className="flex h-12 w-12 items-center justify-center text-[#00a8a6]">
                   <Phone className="h-6 w-6" />
                 </div>
                 <div>
@@ -65,7 +65,7 @@ export default function AboutSection() {
 
               <Link
                 href="#services"
-                className="rounded-full bg-[#00fffd] px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-[#0a1628] transition-all hover:bg-[#68d2df]"
+                className="rounded-md bg-[#00a8a6] px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-white transition-all hover:bg-[#00796b]"
               >
                 Conoce nuestros servicios
               </Link>
@@ -75,7 +75,7 @@ export default function AboutSection() {
           {/* Image side */}
           <div className="relative order-1 lg:order-2">
             {/* Main Image */}
-            <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+            <div className="relative aspect-[4/5] w-[70%] overflow-hidden rounded-lg">
               <Image
                 src="/images/deadlift-woman.png"
                 alt="Entrenamiento con pesas"
@@ -84,8 +84,8 @@ export default function AboutSection() {
               />
             </div>
 
-            {/* Secondary Image - overlapping */}
-            <div className="absolute -right-4 top-1/4 hidden aspect-[3/4] w-1/2 overflow-hidden rounded-xl border-4 border-white shadow-xl lg:block">
+            {/* Secondary Image - overlapping with colored border */}
+            <div className="absolute right-0 top-[15%] aspect-[4/5] w-[55%] overflow-hidden rounded-lg border-[6px] border-[#00a8a6] shadow-2xl">
               <Image
                 src="/images/tech-woman.png"
                 alt="Tecnologia aplicada al movimiento"
@@ -94,14 +94,14 @@ export default function AboutSection() {
               />
             </div>
 
-            {/* Experience badge */}
-            <div className="absolute -bottom-6 right-4 flex items-center gap-3 rounded-xl bg-[#00fffd] px-6 py-4 shadow-xl lg:right-auto lg:left-1/2">
-              <div className="flex h-12 w-12 items-center justify-center text-[#0a1628]">
-                <Activity className="h-8 w-8" />
+            {/* Experience badge - matching red design style */}
+            <div className="absolute -bottom-4 right-0 flex items-center gap-4 rounded-lg bg-[#00a8a6] px-6 py-5 shadow-xl">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/30">
+                <Award className="h-7 w-7 text-white" />
               </div>
               <div>
-                <span className="block font-sans text-xl font-bold text-[#0a1628]">Respaldo</span>
-                <span className="block text-xs font-medium uppercase tracking-wider text-[#0a1628]/80">
+                <span className="block font-sans text-3xl font-bold text-white">Respaldo</span>
+                <span className="block text-sm font-medium uppercase tracking-wider text-white/90">
                   Medico Profesional
                 </span>
               </div>
