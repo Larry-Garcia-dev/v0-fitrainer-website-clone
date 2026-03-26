@@ -47,8 +47,8 @@ export default function AboutSection() {
             </p>
 
             {/* Quote */}
-            <p className="mt-6 font-serif text-base italic text-[#0a1628]">
-              &ldquo;No trabajamos con rutinas estandar. Analizamos cada cuerpo, cada movimiento y cada respuesta para disenar procesos personalizados con fundamento cientifico. Aqui el entrenamiento tiene direccion.&rdquo;
+            <p className="mt-6 font-serif text-base italic text-[#0a1628] style='font-size: larger;'">
+              &ldquo;No trabajamos con rutinas estandar. Analizamos cada cuerpo, cada movimiento y cada respuesta para diseñar procesos personalizados con fundamento cientifico. Aqui el entrenamiento tiene respaldo médico.&rdquo;
             </p>
 
             {/* Phone + CTA */}
@@ -77,7 +77,7 @@ export default function AboutSection() {
             {/* Main Image */}
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
               <Image
-                src="/images/deadlift-woman.png"
+                src="/images/sensores.png"
                 alt="Entrenamiento con pesas"
                 fill
                 className="object-cover"
@@ -87,7 +87,7 @@ export default function AboutSection() {
             {/* Secondary Image - overlapping */}
             <div className="absolute -right-4 top-1/4 hidden aspect-[3/4] w-1/2 overflow-hidden rounded-xl border-4 border-white shadow-xl lg:block">
               <Image
-                src="/images/tech-woman.png"
+                src="/images/deadlift-woman.png"
                 alt="Tecnologia aplicada al movimiento"
                 fill
                 className="object-cover"

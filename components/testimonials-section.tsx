@@ -29,14 +29,14 @@ const testimonials = [
     text: "Entrenar aqui cambio completamente mi forma de ver el ejercicio. Todo tiene un proposito.",
     name: "Maria Lopez",
     role: "Cliente",
-    image: "/images/team-member-2.png",
+    image: "/images/hero-female.jpg",
     featured: false,
   },
   {
     text: "El acompanamiento y la tecnologia hacen que realmente sientas el avance.",
     name: "Juan Rodriguez",
     role: "Cliente",
-    image: "/images/team-member-1.png",
+    image: "/images/testimonial-1.jpg",
     featured: true,
   },
 ]

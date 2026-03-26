@@ -17,19 +17,21 @@ const WavyUnderline = () => (
 
 const team = [
   {
-    name: "Carlos Martinez",
-    role: "Director Medico",
-    image: "/images/team-member-1.png",
+    name: "Lorena Gonzales Russi",
+    role: "Cardiologa, Nutricionista",
+    image: "/images/team-member-3.png",
+    
   },
   {
-    name: "Ana Garcia",
+    name: "Edna Rengifo ",
     role: "Fisioterapeuta",
     image: "/images/team-member-2.png",
   },
   {
-    name: "Laura Sanchez",
-    role: "Nutricionista",
-    image: "/images/team-member-3.png",
+    name: "Ivan Parra",
+    role: "Entrenador",
+    image: "/images/team-member-1.png",
+    
   },
 ]
 
@@ -85,7 +87,7 @@ export default function TeamSection() {
               </h3>
 
               {/* Social icons */}
-              <div className="mt-4 flex gap-2">
+              {/* <div className="mt-4 flex gap-2">
                 <button className="flex h-10 w-10 items-center justify-center rounded-full bg-[#00fffd]/10 text-[#00a8a6] transition-all hover:bg-[#00fffd] hover:text-[#0a1628]" aria-label="LinkedIn">
                   <Linkedin className="h-5 w-5" />
                 </button>
@@ -95,7 +97,7 @@ export default function TeamSection() {
                 <button className="flex h-10 w-10 items-center justify-center rounded-full bg-[#00fffd]/10 text-[#00a8a6] transition-all hover:bg-[#00fffd] hover:text-[#0a1628]" aria-label="Email">
                   <Mail className="h-5 w-5" />
                 </button>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

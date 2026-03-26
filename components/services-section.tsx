@@ -83,10 +83,10 @@ export default function ServicesSection() {
               Cada servicio esta disenado para complementar tu proceso de transformacion fisica y bienestar integral.
             </p>
             <Link
-              href="#contact"
+              href="https://api.magnificapec.com/cardiofit/Brochure_Cardio.pdf"
               className="inline-flex rounded-full bg-[#00fffd] px-8 py-3 text-sm font-semibold uppercase tracking-wider text-[#0a1628] transition-all hover:bg-[#68d2df]"
             >
-              Agendar valoracion
+              Ver Brochure
             </Link>
           </div>
         </div>
