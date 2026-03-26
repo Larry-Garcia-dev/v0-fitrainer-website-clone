@@ -26,16 +26,18 @@ const QuoteIcon = ({ className = "" }: { className?: string }) => (
 
 const testimonials = [
   {
-    text: "Entrenar aqui cambio completamente mi forma de ver el ejercicio. Todo tiene un proposito.",
-    name: "Maria Garcia",
-    role: "Cliente",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.",
+    name: "Harry Houdson",
+    role: "Trainer",
     image: "/images/testimonial-avatar-1.jpg",
+    featured: false,
   },
   {
-    text: "El acompanamiento y la tecnologia hacen que realmente sientas el avance.",
-    name: "Carlos Perez",
-    role: "Cliente",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.",
+    name: "Harry Houdson",
+    role: "Trainer",
     image: "/images/testimonial-avatar-2.jpg",
+    featured: true,
   },
 ]
 
@@ -50,7 +52,7 @@ export default function TestimonialsSection() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[#0a1628]/85" />
+        <div className="absolute inset-0 bg-black/70" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
@@ -58,38 +60,41 @@ export default function TestimonialsSection() {
           {/* Left content */}
           <div>
             <div className="mb-4 flex items-center gap-3">
-              <span className="text-sm font-semibold uppercase tracking-widest text-[#00fffd]">
-                Testimonios
+              <span className="text-sm font-semibold uppercase tracking-widest text-white">
+                Testimonials
               </span>
-              <span className="h-px w-10 bg-[#00fffd]/50" />
+              <span className="h-px w-10 bg-white/50" />
             </div>
             <h2 className="font-sans text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.75rem]">
-              Experiencias reales
+              {"What's Clients Say About Bodyboost"}
             </h2>
             <div className="mt-3">
               <WavyUnderline />
             </div>
             <p className="mt-6 text-base leading-relaxed text-white/70">
-              Nuestros clientes comparten sus experiencias y resultados despues de entrenar con nosotros. El enfoque cientifico y el acompanamiento profesional marcan la diferencia.
+              Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-white/60">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <Link
               href="#contact"
-              className="mt-8 inline-block rounded-full bg-[#00fffd] px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-[#0a1628] transition-all hover:bg-[#68d2df]"
+              className="mt-8 inline-block rounded-full bg-primary px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-white transition-all hover:bg-primary/90"
             >
-              Empieza tu proceso
+              Learn More
             </Link>
           </div>
 
           {/* Right - testimonial cards */}
           <div className="relative flex flex-col gap-6 md:flex-row md:items-start">
             {/* First card - outlined */}
-            <div className="relative rounded-xl border-2 border-dashed border-[#00fffd]/30 bg-transparent p-6 md:mt-12">
-              <QuoteIcon className="bg-[#68d2df] text-white" />
+            <div className="relative rounded-xl border-2 border-dashed border-white/30 bg-transparent p-6 md:mt-12">
+              <QuoteIcon className="bg-gray-500 text-white" />
               <p className="mt-4 text-sm leading-relaxed text-white/80">
                 {testimonials[0].text}
               </p>
               <div className="mt-6 flex items-center gap-3">
-                <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-[#00fffd]/30">
+                <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-white/20">
                   <Image
                     src={testimonials[0].image}
                     alt={testimonials[0].name}
@@ -98,7 +103,7 @@ export default function TestimonialsSection() {
                   />
                 </div>
                 <div>
-                  <h4 className="font-sans text-base font-bold text-[#00fffd]">
+                  <h4 className="font-sans text-base font-bold text-primary">
                     {testimonials[0].name}
                   </h4>
                   <p className="text-xs text-white/60">{testimonials[0].role}</p>
@@ -106,14 +111,14 @@ export default function TestimonialsSection() {
               </div>
             </div>
 
-            {/* Second card - filled cyan */}
-            <div className="relative rounded-xl bg-[#00fffd] p-6 md:-mt-6">
-              <QuoteIcon className="bg-white text-[#00fffd]" />
-              <p className="mt-4 text-sm leading-relaxed text-[#0a1628]/80">
+            {/* Second card - filled red */}
+            <div className="relative rounded-xl bg-primary p-6 md:-mt-6">
+              <QuoteIcon className="bg-white text-primary" />
+              <p className="mt-4 text-sm leading-relaxed text-white/90">
                 {testimonials[1].text}
               </p>
               <div className="mt-6 flex items-center gap-3">
-                <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-[#0a1628]/20">
+                <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-white/30">
                   <Image
                     src={testimonials[1].image}
                     alt={testimonials[1].name}
@@ -122,10 +127,10 @@ export default function TestimonialsSection() {
                   />
                 </div>
                 <div>
-                  <h4 className="font-sans text-base font-bold text-[#0a1628]">
+                  <h4 className="font-sans text-base font-bold text-white">
                     {testimonials[1].name}
                   </h4>
-                  <p className="text-xs text-[#0a1628]/70">{testimonials[1].role}</p>
+                  <p className="text-xs text-white/70">{testimonials[1].role}</p>
                 </div>
               </div>
             </div>
