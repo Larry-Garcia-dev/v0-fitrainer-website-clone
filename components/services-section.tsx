@@ -114,7 +114,7 @@ export default function ServicesSection() {
               {/* Read more link */}
               <Link
                 href="#contact"
-                className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#00fffd] transition-all hover:gap-3"
+                className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#00796b] transition-all hover:gap-3 hover:text-[#00a8a6]"
               >
                 Mas informacion
                 <ArrowRight className="h-3 w-3" />
