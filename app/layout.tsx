@@ -14,30 +14,26 @@ const _inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Fitrainer - Make Yourself Stronger',
-  description: 'Professional fitness training and gym services. Build strength, gain confidence, and achieve your fitness goals with our expert trainers.',
+  title: 'CardioFit Lab - Donde la ciencia se encuentra con la fuerza',
+  description: 'Centro de entrenamiento en Ibague con respaldo medico, analisis biomecanico y tecnologia aplicada al movimiento. Entrena con ciencia, mejora con precision.',
   generator: 'v0.app',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/images/logo-icon.png',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/images/logo-icon.png',
         media: '(prefers-color-scheme: dark)',
       },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
     ],
-    apple: '/apple-icon.png',
+    apple: '/images/logo-icon.png',
   },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#000000',
+  themeColor: '#0a1628',
 }
 
 export default function RootLayout({
@@ -46,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`${_oswald.variable} ${_inter.variable} font-serif antialiased`}>
         {children}
         <Analytics />
