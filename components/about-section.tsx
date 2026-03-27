@@ -77,7 +77,7 @@ export default function AboutSection() {
             {/* Main Image */}
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
               <Image
-                src="/images/sensores.png"
+                src="/images/Web_CardioFit_3.png"
                 alt="Entrenamiento con pesas"
                 fill
                 className="object-cover"

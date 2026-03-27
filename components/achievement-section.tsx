@@ -92,7 +92,7 @@ export default function AchievementSection() {
 
             {/* Quote */}
             <p className="mt-6 font-serif text-base italic text-gray-700">
-              &ldquo;Avanza. Agenda tu valoracion y comienza un proceso disenado para tu cuerpo.&rdquo;
+              Avanza: Agenda tu valoracion y comienza un proceso disenado para tu cuerpo.
             </p>
 
             {/* CTA Section */}
