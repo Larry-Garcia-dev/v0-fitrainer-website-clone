@@ -25,9 +25,9 @@ const WhatsAppIcon = () => (
 
 const quickLinks = [
   { label: "Inicio", href: "/" },
-  { label: "Nosotros", href: "/#about" },
   { label: "Planes y Servicios", href: "/planes-servicios" },
   { label: "Proceso", href: "/proceso" },
+  { label: "Contacto", href: "/contacto" },
 ]
 
 const services = [

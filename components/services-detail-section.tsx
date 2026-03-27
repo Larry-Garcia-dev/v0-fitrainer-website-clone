@@ -1,8 +1,19 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Dumbbell, Activity, Snowflake, Heart, Utensils, Scan } from "lucide-react"
+import { 
+  ArrowRight, 
+  Activity, 
+  Heart, 
+  Sparkles, 
+  Utensils,
+  Footprints,
+  Stethoscope,
+  Dumbbell,
+  Waves,
+  BadgePercent,
+  FlameKindling
+} from "lucide-react"
 
 // Wavy underline SVG component
 const WavyUnderline = () => (
@@ -16,7 +27,55 @@ const WavyUnderline = () => (
   </svg>
 )
 
-const services = [
+const serviceCategories = [
+  {
+    id: "biomecanica",
+    title: "Biomecanica",
+    icon: Footprints,
+    color: "from-cyan-500 to-blue-500",
+    services: [
+      { name: "Analisis Running", price: "$650.000" },
+      { name: "Analisis Marcha", price: "$400.000" },
+    ],
+  },
+  {
+    id: "cardiologia",
+    title: "Cardiologia",
+    icon: Heart,
+    color: "from-red-500 to-pink-500",
+    services: [
+      { name: "Consulta Especializada", price: "$300.000" },
+      { name: "Ecocardiograma", price: "$250.000" },
+      { name: "Holter 24h", price: "$200.000" },
+      { name: "MAPA Presion Arterial", price: "$200.000" },
+      { name: "ECG 12 Derivaciones", price: "$50.000" },
+    ],
+  },
+  {
+    id: "recuperacion",
+    title: "Recuperacion & Spa",
+    icon: Waves,
+    color: "from-teal-500 to-cyan-500",
+    services: [
+      { name: "Terapia Fisica (10 sesiones)", price: "$650.000" },
+      { name: "Circuito Recuperacion", price: "$220.000" },
+      { name: "Masaje Terapeutico", price: "$120.000" },
+      { name: "Bano Terapeutico / Jacuzzi", price: "$100.000" },
+    ],
+  },
+  {
+    id: "otros",
+    title: "Otros Servicios",
+    icon: Sparkles,
+    color: "from-purple-500 to-indigo-500",
+    services: [
+      { name: "Consulta Nutricion", price: "$300.000" },
+      { name: "Entrenamiento Simulador (4 sesiones)", price: "$200.000" },
+    ],
+  },
+]
+
+const mainServices = [
   {
     icon: Dumbbell,
     title: "Entrenamiento personalizado",
@@ -24,25 +83,25 @@ const services = [
     features: ["Evaluacion inicial completa", "Programas a medida", "Seguimiento continuo", "Ajustes basados en progreso"],
   },
   {
-    icon: Scan,
+    icon: Footprints,
     title: "Evaluacion biomecanica",
     description: "Estudio detallado de tu tecnica, activacion muscular y patrones de movimiento con tecnologia de precision.",
     features: ["Analisis de movimiento 3D", "Evaluacion postural", "Identificacion de desbalances", "Recomendaciones correctivas"],
   },
   {
-    icon: Activity,
+    icon: Stethoscope,
     title: "Valoracion cardiovascular",
     description: "Evaluacion completa de tu salud cardiovascular con respaldo medico para un entrenamiento seguro y efectivo.",
     features: ["Pruebas de esfuerzo", "Monitoreo cardiaco", "Prescripcion de ejercicio", "Control de factores de riesgo"],
   },
   {
-    icon: Snowflake,
+    icon: FlameKindling,
     title: "Recuperacion avanzada",
     description: "Crioterapia, sauna infrarrojo y terapias de descarga muscular para optimizar tu recuperacion.",
     features: ["Crioterapia localizada", "Sauna infrarrojo", "Terapia de compresion", "Protocolos personalizados"],
   },
   {
-    icon: Heart,
+    icon: Waves,
     title: "Zona de bienestar",
     description: "Masajes, spa y experiencias enfocadas en recuperacion y descanso como parte integral del proceso.",
     features: ["Masajes terapeuticos", "Spa relajante", "Meditacion guiada", "Espacios de descanso"],
@@ -76,9 +135,9 @@ export default function ServicesDetailSection() {
           </div>
         </div>
 
-        {/* Services grid */}
+        {/* Main Services grid */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
+          {mainServices.map((service) => (
             <div
               key={service.title}
               className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-[#00fffd] hover:shadow-lg"
@@ -108,7 +167,7 @@ export default function ServicesDetailSection() {
 
               {/* CTA link */}
               <Link
-                href="#contact"
+                href="/contacto"
                 className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[#00a8a6] transition-all hover:gap-3 hover:text-[#00796b]"
               >
                 Mas informacion
@@ -116,6 +175,55 @@ export default function ServicesDetailSection() {
               </Link>
             </div>
           ))}
+        </div>
+
+        {/* Pricing Categories */}
+        <div className="mt-24">
+          <div className="mb-12 text-center">
+            <div className="mb-4 flex items-center justify-center gap-3">
+              <span className="h-px w-10 bg-[#00fffd]" />
+              <span className="text-sm font-semibold uppercase tracking-widest text-[#00a8a6]">
+                Precios por Categoria
+              </span>
+              <span className="h-px w-10 bg-[#00fffd]" />
+            </div>
+            <h3 className="mx-auto max-w-2xl font-sans text-2xl font-bold leading-tight text-[#0a1628] sm:text-3xl">
+              Servicios Especializados
+            </h3>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {serviceCategories.map((category) => (
+              <div
+                key={category.id}
+                className="group rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm transition-all duration-300 hover:border-[#00fffd] hover:shadow-lg"
+              >
+                {/* Header with gradient */}
+                <div className={`bg-gradient-to-r ${category.color} p-4`}>
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20">
+                      <category.icon className="h-5 w-5 text-white" strokeWidth={2} />
+                    </div>
+                    <h4 className="font-sans text-lg font-bold text-white">
+                      {category.title}
+                    </h4>
+                  </div>
+                </div>
+
+                {/* Services list */}
+                <div className="p-4">
+                  <ul className="space-y-3">
+                    {category.services.map((service) => (
+                      <li key={service.name} className="flex items-center justify-between border-b border-gray-100 pb-2 last:border-0 last:pb-0">
+                        <span className="text-sm text-gray-700">{service.name}</span>
+                        <span className="text-sm font-semibold text-[#0a1628]">{service.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Brochure CTA */}

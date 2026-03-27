@@ -79,39 +79,39 @@ export default function TeamCarouselSection() {
         {/* Team Carousel */}
         <Carousel
           opts={{
-            align: "start",
+            align: "center",
             loop: true,
           }}
-          className="mx-auto w-full max-w-5xl"
+          className="mx-auto w-full max-w-6xl"
         >
           <CarouselContent className="-ml-4">
             {team.map((member) => (
               <CarouselItem key={member.name} className="pl-4 md:basis-1/2 lg:basis-1/2">
-                <div className="group h-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all hover:border-[#00fffd] hover:shadow-xl">
-                  {/* Image */}
-                  <div className="relative h-72 overflow-hidden bg-[#0a1628]">
+                <div className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg transition-all hover:border-[#00fffd] hover:shadow-2xl">
+                  {/* Image - Much larger */}
+                  <div className="relative h-[400px] md:h-[500px] overflow-hidden bg-[#0a1628]">
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
                       className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/90 via-[#0a1628]/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/30 to-transparent" />
                     
                     {/* Name overlay */}
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <p className="text-sm font-medium text-[#00fffd]">{member.specialty}</p>
-                      <h3 className="font-sans text-xl font-bold text-white">{member.name}</h3>
-                      <p className="text-sm text-white/70">{member.role}</p>
+                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                      <p className="text-sm font-semibold text-[#00fffd] uppercase tracking-wider">{member.specialty}</p>
+                      <h3 className="mt-2 font-sans text-2xl md:text-3xl font-bold text-white">{member.name}</h3>
+                      <p className="mt-1 text-base text-white/80">{member.role}</p>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <p className="text-sm leading-relaxed text-gray-600">{member.bio}</p>
+                  <div className="p-6 md:p-8">
+                    <p className="text-base leading-relaxed text-gray-600">{member.bio}</p>
                     
                     {/* Decorative line */}
-                    <div className="mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-[#00fffd] to-[#00a8a6]" />
+                    <div className="mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-[#00fffd] to-[#00a8a6]" />
                   </div>
                 </div>
               </CarouselItem>
@@ -119,9 +119,9 @@ export default function TeamCarouselSection() {
           </CarouselContent>
           
           {/* Navigation buttons */}
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <CarouselPrevious className="static translate-y-0 border-[#00fffd] bg-transparent text-[#00fffd] hover:bg-[#00fffd] hover:text-[#0a1628]" />
-            <CarouselNext className="static translate-y-0 border-[#00fffd] bg-transparent text-[#00fffd] hover:bg-[#00fffd] hover:text-[#0a1628]" />
+          <div className="mt-10 flex items-center justify-center gap-6">
+            <CarouselPrevious className="static h-12 w-12 translate-y-0 border-2 border-[#00fffd] bg-transparent text-[#00fffd] hover:bg-[#00fffd] hover:text-[#0a1628]" />
+            <CarouselNext className="static h-12 w-12 translate-y-0 border-2 border-[#00fffd] bg-transparent text-[#00fffd] hover:bg-[#00fffd] hover:text-[#0a1628]" />
           </div>
         </Carousel>
 

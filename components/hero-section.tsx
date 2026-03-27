@@ -1,79 +1,50 @@
 "use client"
 
-import Link from "next/link"
-import { Activity } from "lucide-react"
+import { useEffect, useState } from "react"
 
 export default function HeroSection() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
+
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden bg-[#0a1628]">
+    <section id="home" className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
         <video
+          key={isMobile ? "vertical" : "horizontal"}
           autoPlay
           muted
           loop
           playsInline
           className="h-full w-full object-cover"
-          poster="/images/hero-bg.png"
         >
-          <source src="/videos/hero-video.mp4" type="video/mp4" />
+          <source 
+            src={isMobile 
+              ? "https://api.magnificapec.com/cardiofit/vertical.mp4" 
+              : "https://api.magnificapec.com/cardiofit/videoCardioFig.mp4"
+            } 
+            type="video/mp4" 
+          />
         </video>
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-[#0a1628]/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/90 via-[#0a1628]/60 to-transparent" />
+        {/* Subtle dark overlay for better visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/30 via-transparent to-[#0a1628]/50" />
       </div>
 
-      {/* Content */}
-      <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-4 pt-20 lg:px-8">
-        {/* Centered Content */}
-        <div className="z-10 mx-auto max-w-3xl text-center">
-          {/* Subtitle */}
-          <p className="mb-4 font-serif text-sm text-[#00fffd] md:text-base">
-            Cada proceso comienza entendiendo tu cuerpo.
-          </p>
-
-          {/* Main Heading */}
-          <h1 className="font-sans text-4xl font-bold leading-[1.1] text-white sm:text-5xl md:text-6xl lg:text-[4.5rem]">
-            Entrena con{" "}
-            <span className="text-[#00fffd]">ciencia</span>
-            <span className="text-white">.</span>
-            <br />
-            Mejora con{" "}
-            <span className="text-[#00fffd]">precision</span>
-            <span className="text-white">.</span>
-          </h1>
-
-          {/* Description */}
-          <p className="mx-auto mt-6 max-w-lg text-base text-white/70 md:text-lg">
-            Centro de entrenamiento en Ibague con respaldo medico, analisis biomecanico y tecnologia aplicada al movimiento.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="#contact"
-              className="rounded-full bg-[#00fffd] px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-[#0a1628] transition-all hover:bg-[#68d2df]"
-            >
-              Agenda tu valoracion
-            </Link>
-
-            <Link
-              href="#about"
-              className="rounded-full border-2 border-[#00fffd] bg-transparent px-8 py-3 text-sm font-semibold uppercase tracking-wider text-[#00fffd] transition-all hover:bg-[#00fffd]/10"
-            >
-              Conoce como funciona
-            </Link>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-xs font-medium uppercase tracking-widest text-white/70">Scroll</span>
+          <div className="h-12 w-6 rounded-full border-2 border-white/30 p-1">
+            <div className="h-2 w-full animate-bounce rounded-full bg-[#00fffd]" />
           </div>
-        </div>
-      </div>
-
-      {/* Trust Banner */}
-      <div className="absolute bottom-0 left-0 right-0 z-20">
-        <div className="flex items-center justify-center gap-4 bg-[#00fffd]/10 backdrop-blur-sm px-6 py-4 border-t border-[#00fffd]/30">
-          <Activity className="h-6 w-6 text-[#00fffd]" />
-          <p className="text-center text-sm text-white/90 md:text-base">
-            Respaldado por un enfoque interdisciplinar en salud, movimiento y bienestar.
-          </p>
         </div>
       </div>
     </section>
