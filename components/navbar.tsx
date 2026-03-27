@@ -7,9 +7,9 @@ import Image from "next/image"
 
 const navLinks = [
   { label: "Inicio", href: "/" },
-  { label: "Nosotros", href: "/#about" },
   { label: "Planes y Servicios", href: "/planes-servicios" },
   { label: "Proceso", href: "/proceso" },
+  { label: "Contacto", href: "/contacto" },
 ]
 
 export default function Navbar() {
