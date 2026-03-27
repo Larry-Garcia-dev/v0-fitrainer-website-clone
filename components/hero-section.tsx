@@ -1,35 +1,39 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { Activity } from "lucide-react"
 
 export default function HeroSection() {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden bg-[#0a1628]">
-      {/* Background Image */}
+      {/* Video Background */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/hero-bg.png"
-          alt="CardioFit Lab gym"
-          fill
-          className="object-cover opacity-80"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628] via-[#0a1628]/80 to-transparent" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="h-full w-full object-cover"
+          poster="/images/hero-bg.png"
+        >
+          <source src="/videos/hero-video.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-[#0a1628]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/90 via-[#0a1628]/60 to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-4 pt-20 lg:flex-row lg:items-center lg:px-8">
-        {/* Left Content */}
-        <div className="z-10 max-w-2xl lg:w-1/2">
+      <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-4 pt-20 lg:px-8">
+        {/* Centered Content */}
+        <div className="z-10 mx-auto max-w-3xl text-center">
           {/* Subtitle */}
           <p className="mb-4 font-serif text-sm text-[#00fffd] md:text-base">
             Cada proceso comienza entendiendo tu cuerpo.
           </p>
 
           {/* Main Heading */}
-          <h1 className="font-sans text-4xl font-bold leading-[1.1] text-white sm:text-5xl md:text-6xl lg:text-[4rem]">
+          <h1 className="font-sans text-4xl font-bold leading-[1.1] text-white sm:text-5xl md:text-6xl lg:text-[4.5rem]">
             Entrena con{" "}
             <span className="text-[#00fffd]">ciencia</span>
             <span className="text-white">.</span>
@@ -40,12 +44,12 @@ export default function HeroSection() {
           </h1>
 
           {/* Description */}
-          <p className="mt-6 max-w-lg text-base text-white/70 md:text-lg">
+          <p className="mx-auto mt-6 max-w-lg text-base text-white/70 md:text-lg">
             Centro de entrenamiento en Ibague con respaldo medico, analisis biomecanico y tecnologia aplicada al movimiento.
           </p>
 
           {/* CTA Buttons */}
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="#contact"
               className="rounded-full bg-[#00fffd] px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-[#0a1628] transition-all hover:bg-[#68d2df]"
@@ -59,20 +63,6 @@ export default function HeroSection() {
             >
               Conoce como funciona
             </Link>
-          </div>
-        </div>
-
-        {/* Right Content - Woman with Circle */}
-        <div className="relative mt-12 flex items-center justify-center lg:mt-0 lg:w-1/2">
-          {/* Woman Image with circle already included */}
-          <div className="relative z-10 h-[400px] w-[350px] md:h-[500px] md:w-[420px] lg:h-[550px] lg:w-[460px]">
-            <Image
-              src="/images/hero-woman.png"
-              alt="Entrenadora profesional CardioFit Lab"
-              fill
-              className="object-contain object-center"
-              priority
-            />
           </div>
         </div>
       </div>

@@ -24,11 +24,10 @@ const WhatsAppIcon = () => (
 )
 
 const quickLinks = [
-  { label: "Inicio", href: "#home" },
-  { label: "Nosotros", href: "#about" },
-  { label: "Servicios", href: "#services" },
-  { label: "Proceso", href: "#process" },
-  { label: "Equipo", href: "#team" },
+  { label: "Inicio", href: "/" },
+  { label: "Nosotros", href: "/#about" },
+  { label: "Planes y Servicios", href: "/planes-servicios" },
+  { label: "Proceso", href: "/proceso" },
 ]
 
 const services = [

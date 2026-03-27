@@ -49,7 +49,7 @@ export default function FeaturesSection() {
             Diferenciales
           </span>
           <h2 className="mt-4 font-sans text-3xl font-bold text-white sm:text-4xl">
-            Por que elegir CardioFit Lab
+            Por que elegir Cardiofil y el Furor
           </h2>
         </div>
 
