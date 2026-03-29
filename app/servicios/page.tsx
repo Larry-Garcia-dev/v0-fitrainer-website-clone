@@ -2,7 +2,6 @@ import Navbar from "@/components/navbar"
 import HeroSection from "@/components/hero-section"
 import ServicesSection from "@/components/services-section"
 import TeamSection from "@/components/team-section"
-import CTASection from "@/components/cta-section"
 import Footer from "@/components/footer"
 
 export default function ServiciosPage() {
@@ -15,9 +14,7 @@ export default function ServiciosPage() {
       <ServicesSection />
       {/* Nuestro Equipo */}
       <TeamSection />
-      {/* CTA Final */}
-      <CTASection />
-      {/* Footer */}
+      {/* Footer con CTA Final integrado */}
       <Footer />
     </main>
   )
