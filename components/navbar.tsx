@@ -27,16 +27,19 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Determine if we should show the solid background
+  const showBackground = scrolled || !isHome
+
   return (
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
+        showBackground
           ? "bg-[#0a1628]/95 shadow-lg backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
-      {/* Cyan top bar - hidden on home when not scrolled */}
-      <div className={`h-1 w-full bg-[#00fffd] transition-opacity duration-300 ${isHome && !scrolled ? "opacity-0" : "opacity-100"}`} />
+      {/* Cyan top bar - only visible when background is showing */}
+      <div className={`h-1 w-full bg-[#00fffd] transition-all duration-300 ${showBackground ? "opacity-100" : "h-0 opacity-0"}`} />
 
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         {/* Logo */}
