@@ -221,55 +221,61 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Section header - Servicios Adicionales */}
-        <div className="mb-12">
-          <div className="mb-4 flex items-center gap-3">
-            <span className="text-sm font-semibold uppercase tracking-widest text-[#00a8a6]">
-              Servicios Adicionales
-            </span>
-            <span className="h-px w-10 bg-[#00fffd]" />
-          </div>
-          <h2 className="max-w-lg font-sans text-3xl font-bold leading-tight text-[#0a1628] sm:text-4xl">
-            Complementa tu experiencia
-          </h2>
-          <div className="mt-3">
-            <WavyUnderline />
-          </div>
-        </div>
+      </div>
 
-        {/* Additional Services Grid */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {additionalServices.map((service) => (
-            <div
-              key={service.title}
-              className="group rounded-xl bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-[#00fffd] border border-transparent"
-            >
-              {/* Icon */}
-              <div className="mb-4 text-gray-400 transition-colors group-hover:text-[#00fffd]">
-                <service.icon className="h-10 w-10" strokeWidth={1.5} />
-              </div>
-
-              {/* Content */}
-              <h3 className="font-sans text-base font-bold text-[#0a1628]">
-                {service.title}
-              </h3>
-              <p className="mt-1 text-xl font-bold text-[#00a8a6]">
-                {service.price}
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                {service.description}
-              </p>
-
-              {/* Read more link */}
-              <Link
-                href="/contacto"
-                className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#00796b] transition-all hover:gap-3 hover:text-[#00a8a6]"
-              >
-                Mas informacion
-                <ArrowRight className="h-3 w-3" />
-              </Link>
+      {/* Servicios Adicionales - Dark section */}
+      <div className="mt-16 bg-[#0a1628] py-16 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          {/* Section header - Servicios Adicionales */}
+          <div className="mb-12">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="text-sm font-semibold uppercase tracking-widest text-[#00fffd]">
+                Servicios Adicionales
+              </span>
+              <span className="h-px w-10 bg-[#00fffd]" />
             </div>
-          ))}
+            <h2 className="max-w-lg font-sans text-3xl font-bold leading-tight text-white sm:text-4xl">
+              Complementa tu experiencia
+            </h2>
+            <div className="mt-3">
+              <WavyUnderline />
+            </div>
+          </div>
+
+          {/* Additional Services Grid */}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {additionalServices.map((service) => (
+              <div
+                key={service.title}
+                className="group rounded-xl bg-[#0f2240] p-6 transition-all duration-300 hover:bg-[#142952] border border-[#1a3a5c] hover:border-[#00fffd]"
+              >
+                {/* Icon */}
+                <div className="mb-4 text-[#00fffd]/60 transition-colors group-hover:text-[#00fffd]">
+                  <service.icon className="h-10 w-10" strokeWidth={1.5} />
+                </div>
+
+                {/* Content */}
+                <h3 className="font-sans text-base font-bold text-white">
+                  {service.title}
+                </h3>
+                <p className="mt-1 text-xl font-bold text-[#00fffd]">
+                  {service.price}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-gray-400">
+                  {service.description}
+                </p>
+
+                {/* Read more link */}
+                <Link
+                  href="/contacto"
+                  className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#00fffd] transition-all hover:gap-3 hover:text-[#68d2df]"
+                >
+                  Mas informacion
+                  <ArrowRight className="h-3 w-3" />
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
