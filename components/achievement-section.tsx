@@ -111,7 +111,7 @@ export default function AchievementSection() {
                   Empieza tu proceso con respaldo profesional
                 </p>
                 <a
-                  href="#contact"
+                  href="/contacto"
                   className="rounded-full bg-[#0a1628] px-6 py-2 text-sm font-semibold text-white transition-all hover:bg-[#0a1628]/80"
                 >
                   Agendar ahora

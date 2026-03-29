@@ -24,11 +24,10 @@ const WhatsAppIcon = () => (
 )
 
 const quickLinks = [
-  { label: "Inicio", href: "#home" },
-  { label: "Nosotros", href: "#about" },
-  { label: "Servicios", href: "#services" },
-  { label: "Proceso", href: "#process" },
-  { label: "Equipo", href: "#team" },
+  { label: "Inicio", href: "/" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Proceso", href: "/proceso" },
+  { label: "Contacto", href: "/contacto" },
 ]
 
 const services = [
@@ -61,8 +60,7 @@ export default function Footer() {
             </h3>
           </div>
           <Link
-            href="https://wa.me/573155774777"
-            target="_blank"
+            href="/contacto"
             className="shrink-0 rounded-full border-2 border-[#0a1628] bg-[#0a1628] px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-all hover:bg-transparent hover:text-[#0a1628]"
           >
             Agendar ahora
@@ -160,7 +158,7 @@ export default function Footer() {
               {services.map((service) => (
                 <li key={service}>
                   <Link
-                    href="#services"
+                    href="/servicios"
                     className="text-sm text-white/60 transition-colors hover:text-[#00fffd]"
                   >
                     {service}

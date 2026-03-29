@@ -78,7 +78,7 @@ export default function TestimonialsSection() {
               Cada proceso es unico, cada resultado es medible.
             </p>
             <Link
-              href="#contact"
+              href="/contacto"
               className="mt-8 inline-block rounded-full bg-[#00fffd] px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-[#0a1628] transition-all hover:bg-[#68d2df]"
             >
               Comienza tu proceso
