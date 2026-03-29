@@ -64,7 +64,7 @@ export default function AboutSection() {
               </div>
 
               <Link
-                href="#services"
+                href="/servicios"
                 className="rounded-full bg-[#00fffd] px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-[#0a1628] transition-all hover:bg-[#68d2df]"
               >
                 Conoce nuestros servicios

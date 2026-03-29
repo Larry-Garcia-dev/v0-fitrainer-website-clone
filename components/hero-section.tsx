@@ -47,14 +47,14 @@ export default function HeroSection() {
           {/* CTA Buttons */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
-              href="#contact"
+              href="/contacto"
               className="rounded-full bg-[#00fffd] px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-[#0a1628] transition-all hover:bg-[#68d2df]"
             >
               Agenda tu valoracion
             </Link>
 
             <Link
-              href="#about"
+              href="/proceso"
               className="rounded-full border-2 border-[#00fffd] bg-transparent px-8 py-3 text-sm font-semibold uppercase tracking-wider text-[#00fffd] transition-all hover:bg-[#00fffd]/10"
             >
               Conoce como funciona

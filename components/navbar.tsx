@@ -6,12 +6,10 @@ import Link from "next/link"
 import Image from "next/image"
 
 const navLinks = [
-  { label: "Inicio", href: "#home" },
-  { label: "Nosotros", href: "#about" },
-  { label: "Servicios", href: "#services" },
-  { label: "Proceso", href: "#process" },
-  { label: "Equipo", href: "#team" },
-  { label: "Experiencia", href: "#experience" },
+  { label: "Vista #1", href: "/" },
+  { label: "Vista #2", href: "/servicios" },
+  { label: "Vista #3", href: "/proceso" },
+  { label: "Vista #4", href: "/contacto" },
 ]
 
 export default function Navbar() {
@@ -39,7 +37,7 @@ export default function Navbar() {
 
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         {/* Logo */}
-        <Link href="#home" className="relative h-10 w-48">
+        <Link href="/" className="relative h-10 w-48">
           <Image
             src="/images/logo-horizontal.png"
             alt="CardioFit Lab"
@@ -64,7 +62,7 @@ export default function Navbar() {
         {/* CTA + Mobile toggle */}
         <div className="flex items-center gap-4">
           <Link
-            href="#contact"
+            href="/contacto"
             className="hidden rounded-full bg-[#00fffd] px-6 py-2.5 text-sm font-semibold uppercase tracking-wider text-[#0a1628] transition-all hover:bg-[#68d2df] lg:block"
           >
             Agenda tu valoracion
@@ -94,7 +92,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="#contact"
+              href="/contacto"
               onClick={() => setMobileOpen(false)}
               className="mt-2 flex items-center justify-center rounded-full bg-[#00fffd] px-5 py-3 text-sm font-semibold uppercase tracking-wider text-[#0a1628]"
             >
