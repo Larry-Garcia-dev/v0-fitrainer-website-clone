@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -15,6 +16,8 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === "/"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,8 +35,8 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      {/* Cyan top bar */}
-      <div className="h-1 w-full bg-[#00fffd]" />
+      {/* Cyan top bar - hidden on home when not scrolled */}
+      <div className={`h-1 w-full bg-[#00fffd] transition-opacity duration-300 ${isHome && !scrolled ? "opacity-0" : "opacity-100"}`} />
 
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         {/* Logo */}
