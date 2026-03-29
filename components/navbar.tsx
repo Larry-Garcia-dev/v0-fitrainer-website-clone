@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -15,6 +16,8 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === "/"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,16 +27,19 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // On home page: transparent until scroll. On other pages: always show background
+  const isTransparent = isHome && !scrolled
+
   return (
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#0a1628]/95 shadow-lg backdrop-blur-md"
-          : "bg-transparent"
+        isTransparent
+          ? "bg-transparent"
+          : "bg-[#0a1628]/95 shadow-lg backdrop-blur-md"
       }`}
     >
-      {/* Cyan top bar */}
-      <div className="h-1 w-full bg-[#00fffd]" />
+      {/* Cyan top bar - hidden on home when transparent */}
+      <div className={`w-full bg-[#00fffd] transition-all duration-300 ${isTransparent ? "h-0 opacity-0" : "h-1 opacity-100"}`} />
 
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         {/* Logo */}
