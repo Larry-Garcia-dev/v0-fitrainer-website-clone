@@ -6,10 +6,10 @@ import Link from "next/link"
 import Image from "next/image"
 
 const navLinks = [
-  { label: "Vista #1", href: "/" },
-  { label: "Vista #2", href: "/servicios" },
-  { label: "Vista #3", href: "/proceso" },
-  { label: "Vista #4", href: "/contacto" },
+  { label: "Inicio", href: "/" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Proceso", href: "/proceso" },
+  { label: "Contacto", href: "/contacto" },
 ]
 
 export default function Navbar() {
