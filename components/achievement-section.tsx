@@ -70,14 +70,14 @@ export default function AchievementSection() {
             {/* Section label */}
             <div className="mb-4 flex items-center gap-3">
               <span className="text-sm font-semibold uppercase tracking-widest text-[#00a8a6]">
-                Posicionamiento
+                Respaldo médico
               </span>
               <span className="h-px w-10 bg-[#00fffd]" />
             </div>
 
             {/* Main Heading */}
             <h2 className="font-sans text-3xl font-bold leading-tight text-[#0a1628] sm:text-4xl lg:text-[2.5rem]">
-              No es un gimnasio. Es un espacio donde el movimiento se entiende.
+              Entrenamiento con respaldo médico y científico
             </h2>
 
             {/* Wavy underline */}
@@ -87,7 +87,9 @@ export default function AchievementSection() {
 
             {/* Description */}
             <p className="mt-6 text-base leading-relaxed text-gray-600">
-              Un espacio donde el movimiento se analiza y se entrena con intencion. Cada ejercicio tiene un proposito, cada rutina esta respaldada por datos.
+              Aquí cada proceso está respaldado por un enfoque médico, científico y tecnológico.
+              Bajo el direccionamiento de  profesionales en salud, analizamos el movimiento, la condición física y las necesidades individuales para diseñar procesos seguros, precisos y alineados a tu bienestar.
+              Aquí el entrenamiento se construye con criterio, seguimiento y conocimiento.
             </p>
 
             {/* Quote */}
@@ -99,24 +101,24 @@ export default function AchievementSection() {
             <div className="mt-8">
               <div className="mb-4 flex items-center justify-center gap-3">
                 <span className="h-px flex-1 bg-[#00fffd]" />
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#00a8a6]">
+                {/* <span className="text-xs font-semibold uppercase tracking-widest text-[#00a8a6]">
                   Resultados con intencion
-                </span>
+                </span> */}
                 <span className="h-px flex-1 bg-[#00fffd]" />
               </div>
 
               {/* CTA Banner */}
-              <div className="flex items-center justify-between gap-4 rounded-xl bg-[#00fffd] px-6 py-4">
-                <p className="font-sans font-bold text-[#0a1628]">
+              {/* <div className="flex items-center justify-between gap-4 rounded-xl bg-[#00fffd] px-6 py-4"> */}
+                {/* <p className="font-sans font-bold text-[#0a1628]">
                   Empieza tu proceso con respaldo profesional
-                </p>
-                <a
+                </p> */}
+                {/* <a
                   href="/contacto"
                   className="rounded-full bg-[#0a1628] px-6 py-2 text-sm font-semibold text-white transition-all hover:bg-[#0a1628]/80"
                 >
                   Agendar ahora
-                </a>
-              </div>
+                </a> */}
+              {/* </div> */}
             </div>
           </div>
         </div>
