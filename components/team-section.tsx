@@ -32,25 +32,25 @@ const team = [
     role: "Entrenador",
     image: "/images/team-member-1.png",
   },
+  // {
+  //   name: "Carlos Martinez",
+  //   role: "Preparador Fisico",
+  //   image: "/images/team-member-1.png",
+  // },
   {
-    name: "Carlos Martinez",
-    role: "Preparador Fisico",
-    image: "/images/team-member-1.png",
-  },
-  {
-    name: "Maria Fernandez",
+    name: "name Unkown",
     role: "Nutricionista Deportiva",
-    image: "/images/team-member-3.png",
+    image: "/images/team1.png",
   },
   {
     name: "Juan Rodriguez",
     role: "Fisioterapeuta Deportivo",
-    image: "/images/team-member-2.png",
+    image: "/images/team2.png",
   },
   {
     name: "Ana Sofia Lopez",
     role: "Coach de Bienestar",
-    image: "/images/team-member-3.png",
+    image: "/images/team4.png",
   },
 ]
 
