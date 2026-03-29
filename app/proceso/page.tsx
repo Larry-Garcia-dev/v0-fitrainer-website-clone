@@ -1,7 +1,6 @@
 import Navbar from "@/components/navbar"
 import ProcessSection from "@/components/process-section"
 import ExperienceSection from "@/components/experience-section"
-import CTASection from "@/components/cta-section"
 import Footer from "@/components/footer"
 
 export default function ProcesoPage() {
@@ -12,9 +11,7 @@ export default function ProcesoPage() {
       <ProcessSection />
       {/* Mas que entrenamiento */}
       <ExperienceSection />
-      {/* CTA Final */}
-      <CTASection />
-      {/* Footer */}
+      {/* Footer con CTA Final integrado */}
       <Footer />
     </main>
   )
