@@ -70,7 +70,7 @@ export default function AchievementSection() {
             {/* Section label */}
             <div className="mb-4 flex items-center gap-3">
               <span className="text-sm font-semibold uppercase tracking-widest text-[#00a8a6]">
-                Respaldo médico
+                Dr.Lorena González
               </span>
               <span className="h-px w-10 bg-[#00fffd]" />
             </div>

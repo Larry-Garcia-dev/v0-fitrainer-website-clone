@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Oswald, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import WhatsAppButton from "@/components/whatsapp-button"
 import './globals.css'
 
 const _oswald = Oswald({
@@ -45,10 +46,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return (
+ return (
     <html lang="es">
       <body className={`${_oswald.variable} ${_inter.variable} font-serif antialiased`}>
         {children}
+        <WhatsAppButton /> {/* Agregado aquí */}
         <Analytics />
       </body>
     </html>

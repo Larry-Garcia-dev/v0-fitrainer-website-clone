@@ -51,12 +51,12 @@ export default function Footer() {
           <div>
             <div className="mb-2 flex items-center gap-3">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#0a1628]/70">
-                CTA Final
+                Cardiofit Lab
               </span>
               <span className="h-px w-10 bg-[#0a1628]/30" />
             </div>
             <h3 className="font-sans text-xl font-bold uppercase text-[#0a1628] md:text-2xl">
-              Avanza. Agenda tu valoracion y comienza un proceso disenado para tu cuerpo.
+              Avanza. Agenda tu valoracion y comienza un proceso diseñado para tu cuerpo.
             </h3>
           </div>
           <Link
